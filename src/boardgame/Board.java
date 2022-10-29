@@ -32,7 +32,17 @@ public class Board {
 	public Piece piece(int row, int column) {
 		return pieces[row][column];
 	}
+	
 	public Piece piece(Position position) {
 		return pieces[position.getRow()][position.getColumn()];
+	}
+	
+	/*
+	 * pega a matriz na posição dada e atribuir a ela a peça que foi informada. 
+	 * e informa que essa peça não está mais em uma posição nula.
+	 */
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColumn()] = piece;
+		piece.position = position;
 	}
 }
